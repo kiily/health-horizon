@@ -1,8 +1,7 @@
 
 import React from 'react';
-import { Heart, ArrowRight, Star, Clock, Users } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Heart, Star, Clock } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 
 const Treatments = () => {
@@ -70,14 +69,14 @@ const Treatments = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white border-b sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-2">
-              <Heart className="h-8 w-8 text-red-500" />
-              <span className="text-2xl font-bold text-gray-900">MediTravel</span>
+              <Heart className="h-6 w-6 text-red-500" />
+              <span className="text-xl font-bold text-gray-900">MediTravel</span>
             </Link>
             <nav className="hidden md:flex space-x-8">
               <Link to="/treatments" className="text-gray-900 font-medium">Treatments</Link>
@@ -89,105 +88,59 @@ const Treatments = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Medical Treatments Worldwide
+      {/* Hero */}
+      <section className="py-16 text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Medical Treatments
           </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Access world-class medical treatments at affordable prices with comprehensive travel packages
+          <p className="text-lg text-gray-600">
+            World-class medical treatments at affordable prices
           </p>
         </div>
       </section>
 
       {/* Treatments Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Popular Treatment Categories
-          </h2>
-          <p className="text-xl text-gray-600">
-            Choose from our comprehensive range of medical specialties
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {treatments.map((treatment) => (
-            <Card key={treatment.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card key={treatment.id} className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
               <div className="relative">
                 <img
                   src={treatment.image}
                   alt={treatment.name}
                   className="w-full h-48 object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-white rounded-full px-2 py-1 text-sm font-semibold flex items-center">
-                  <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                <div className="absolute top-3 right-3 bg-white rounded-full px-2 py-1 text-sm font-medium flex items-center">
+                  <Star className="h-3 w-3 text-yellow-400 fill-current mr-1" />
                   {treatment.popularity}
                 </div>
               </div>
-              <CardHeader>
-                <CardTitle className="text-xl">{treatment.name}</CardTitle>
-                <CardDescription>{treatment.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-sm text-gray-700 mb-2">Common Procedures:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {treatment.procedures.map((procedure, index) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
-                        >
-                          {procedure}
-                        </span>
-                      ))}
-                    </div>
+              <CardContent className="p-4">
+                <h3 className="font-semibold text-gray-900 mb-2">{treatment.name}</h3>
+                <p className="text-gray-600 text-sm mb-3">{treatment.description}</p>
+                
+                <div className="flex flex-wrap gap-1 mb-3">
+                  {treatment.procedures.slice(0, 2).map((procedure, index) => (
+                    <span
+                      key={index}
+                      className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
+                    >
+                      {procedure}
+                    </span>
+                  ))}
+                </div>
+                
+                <div className="flex justify-between items-center text-sm">
+                  <div className="flex items-center text-gray-500">
+                    <Clock className="h-4 w-4 mr-1" />
+                    {treatment.duration}
                   </div>
-                  
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 text-gray-400 mr-2" />
-                      <span className="text-gray-600">{treatment.duration}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Users className="h-4 w-4 text-gray-400 mr-2" />
-                      <span className="text-gray-600">Popular</span>
-                    </div>
-                  </div>
-                  
-                  <div className="border-t pt-4">
-                    <div className="flex justify-between items-center mb-3">
-                      <div>
-                        <p className="text-sm text-gray-600">Starting from</p>
-                        <p className="text-lg font-semibold text-green-600">{treatment.averagePrice}</p>
-                      </div>
-                    </div>
-                    <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                      Explore Options
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  </div>
+                  <span className="font-semibold text-green-600">{treatment.averagePrice}</span>
                 </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Ready to Start Your Medical Journey?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Get personalized treatment recommendations and package quotes
-          </p>
-          <Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg">
-            Get Free Consultation
-          </Button>
         </div>
       </section>
     </div>
