@@ -1,14 +1,19 @@
-
 import React, { useState } from 'react';
 import { Search, MapPin, Star, Heart, Calendar, Users, Plane } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar as CalendarComponent } from '@/components/ui/calendar';
+import { format } from 'date-fns';
+import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTreatment, setSelectedTreatment] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
+  const [date, setDate] = useState<Date>();
 
   const treatments = [
     'Dental Care', 'Cosmetic Surgery', 'Heart Surgery', 'Orthopedics', 
@@ -84,10 +89,10 @@ const Index = () => {
               <span className="text-2xl font-bold text-gray-900">MediTravel</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-gray-900">Treatments</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Destinations</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">About</a>
-              <a href="#" className="text-gray-700 hover:text-gray-900">Contact</a>
+              <Link to="/treatments" className="text-gray-700 hover:text-gray-900">Treatments</Link>
+              <Link to="/destinations" className="text-gray-700 hover:text-gray-900">Destinations</Link>
+              <Link to="/about" className="text-gray-700 hover:text-gray-900">About</Link>
+              <Link to="/contact" className="text-gray-700 hover:text-gray-900">Contact</Link>
             </nav>
           </div>
         </div>
@@ -133,8 +138,29 @@ const Index = () => {
                 </select>
               </div>
               <div className="relative">
-                <Calendar className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                <Input placeholder="When?" className="pl-10" />
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className={cn(
+                        "w-full justify-start text-left font-normal",
+                        !date && "text-muted-foreground"
+                      )}
+                    >
+                      <Calendar className="h-4 w-4 mr-2" />
+                      {date ? format(date, "PPP") : <span>When?</span>}
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <CalendarComponent
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      initialFocus
+                      className="p-3 pointer-events-auto"
+                    />
+                  </PopoverContent>
+                </Popover>
               </div>
               <Button className="bg-red-500 hover:bg-red-600 text-white">
                 <Search className="h-4 w-4 mr-2" />
