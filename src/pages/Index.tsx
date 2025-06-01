@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Search, Calendar, MapPin, Heart, Star } from 'lucide-react';
+import { Search, Calendar, MapPin, Heart, Star, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Calendar as CalendarComponent } from '@/components/ui/calendar';
@@ -75,6 +74,10 @@ const Index = () => {
               <Link to="/destinations" className="text-gray-700 hover:text-gray-900">Destinations</Link>
               <Link to="/about" className="text-gray-700 hover:text-gray-900">About</Link>
               <Link to="/contact" className="text-gray-700 hover:text-gray-900">Contact</Link>
+              <Link to="/" className="flex items-center space-x-1 text-gray-900 font-medium">
+                <Home className="h-4 w-4" />
+                <span>Home</span>
+              </Link>
             </nav>
           </div>
         </div>

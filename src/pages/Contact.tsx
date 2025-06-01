@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Heart, Phone, Mail, MapPin, Send, Clock } from 'lucide-react';
+import { Heart, Phone, Mail, MapPin, Send, Clock, Home } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -43,6 +42,10 @@ const Contact = () => {
               <Link to="/destinations" className="text-gray-700 hover:text-gray-900">Destinations</Link>
               <Link to="/about" className="text-gray-700 hover:text-gray-900">About</Link>
               <Link to="/contact" className="text-gray-900 font-medium">Contact</Link>
+              <Link to="/" className="flex items-center space-x-1 text-gray-700 hover:text-gray-900">
+                <Home className="h-4 w-4" />
+                <span>Home</span>
+              </Link>
             </nav>
           </div>
         </div>

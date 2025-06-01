@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Heart, Star, Clock } from 'lucide-react';
+import { Heart, Star, Clock, Home } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 
@@ -83,6 +82,10 @@ const Treatments = () => {
               <Link to="/destinations" className="text-gray-700 hover:text-gray-900">Destinations</Link>
               <Link to="/about" className="text-gray-700 hover:text-gray-900">About</Link>
               <Link to="/contact" className="text-gray-700 hover:text-gray-900">Contact</Link>
+              <Link to="/" className="flex items-center space-x-1 text-gray-700 hover:text-gray-900">
+                <Home className="h-4 w-4" />
+                <span>Home</span>
+              </Link>
             </nav>
           </div>
         </div>
