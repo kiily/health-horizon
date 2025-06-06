@@ -1,73 +1,176 @@
-# Welcome to your Lovable project
+# Health Horizon - Medical Tourism Platform
 
-## Project info
+A modern, responsive web application built with Next.js 15 for connecting patients with world-class healthcare providers worldwide.
 
-**URL**: https://lovable.dev/projects/61e4c3e3-2f22-44de-a10b-b26d88cf7a64
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern Stack**: Built with Next.js 15, React 18, TypeScript, and Tailwind CSS
+- **Responsive Design**: Mobile-first design with beautiful UI components
+- **Medical Tourism**: Browse treatments and destinations worldwide
+- **Search & Filter**: Advanced search functionality for treatments and locations
+- **Performance Optimized**: Server-side rendering and optimized images
+- **Accessibility**: WCAG compliant with proper semantic HTML
 
-There are several ways of editing your application.
+## 🛠 Tech Stack
 
-**Use Lovable**
+### Frontend
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Icons**: Lucide React
+- **State Management**: TanStack React Query
+- **Date Handling**: date-fns
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/61e4c3e3-2f22-44de-a10b-b26d88cf7a64) and start prompting.
+### Development Tools
+- **Linting**: ESLint with Next.js config
+- **Type Checking**: TypeScript
+- **Image Optimization**: Next.js Image + Sharp
+- **Package Manager**: npm
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📁 Project Structure
 
-**Use your preferred IDE**
+```
+health-horizon/
+├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── contact/           # Contact page
+│   ├── destinations/      # Medical destinations
+│   ├── treatments/        # Available treatments
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   ├── not-found.tsx      # 404 page
+│   └── page.tsx           # Homepage
+├── src/
+│   ├── components/        # React components
+│   │   ├── shared/        # Shared components
+│   │   └── ui/            # shadcn/ui components
+│   └── lib/               # Utility libraries
+├── ai-docs/               # AI development logs
+├── public/                # Static assets
+└── [config files]        # TypeScript, Tailwind, etc.
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd health-horizon
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Fix ESLint errors automatically
+- `npm run type-check` - Run TypeScript type checking
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Design System
 
-## What technologies are used for this project?
+The application uses a consistent design system with:
 
-This project is built with:
+- **Colors**: Red primary (#EF4444) with gray neutrals
+- **Typography**: Inter font family
+- **Spacing**: Tailwind CSS spacing scale
+- **Components**: shadcn/ui component library
+- **Icons**: Lucide React icon set
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📱 Pages
 
-## How can I deploy this project?
+### Homepage (/)
+- Hero section with search functionality
+- Featured treatment packages
+- Call-to-action sections
 
-Simply open [Lovable](https://lovable.dev/projects/61e4c3e3-2f22-44de-a10b-b26d88cf7a64) and click on Share -> Publish.
+### Treatments (/treatments)
+- Grid of available medical treatments
+- Detailed treatment information
+- Pricing and duration estimates
 
-## Can I connect a custom domain to my Lovable project?
+### Destinations (/destinations)
+- Medical tourism destinations
+- Country-specific information
+- Cost savings data
 
-Yes, you can!
+### About (/about)
+- Company information
+- Mission and values
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Contact (/contact)
+- Contact information
+- Multiple contact methods
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🔧 Configuration
+
+### TypeScript
+The project uses strict TypeScript configuration with Next.js optimizations.
+
+### ESLint
+Configured with Next.js recommended rules for code quality and consistency.
+
+### Tailwind CSS
+Custom configuration with shadcn/ui design tokens and animations.
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+1. Connect your repository to Vercel
+2. Deploy automatically on push to main branch
+
+### Other Platforms
+1. Build the application: `npm run build`
+2. Deploy the `.next` folder and `public` assets
+3. Set environment variables as needed
+
+## 🎯 Performance Targets
+
+- Lighthouse Score: 95+ for all metrics
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Time to Interactive: < 3.5s
+- Cumulative Layout Shift: < 0.1
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🔮 Future Enhancements
+
+- [ ] User authentication and profiles
+- [ ] Booking system integration
+- [ ] Payment processing
+- [ ] Multi-language support (i18n)
+- [ ] Progressive Web App features
+- [ ] Real-time chat support
+- [ ] Advanced analytics
+- [ ] Content management system
+- [ ] API integration for real clinic data
+- [ ] Mobile app development
