@@ -13,7 +13,7 @@ export default function HomePage() {
 			<Header activePage="/" />
 
 			<HeroSection
-				title="Medical care, anywhere"
+				title="Your health, your journey, your way"
 				subtitle="World-class medical treatments combined with travel experiences"
 			/>
 

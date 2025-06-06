@@ -11,7 +11,6 @@ import {
 	PopoverTrigger,
 } from '@/components/ui/popover';
 import { format } from 'date-fns';
-import Image from 'next/image';
 
 interface HeroSectionProps {
 	title: string;
@@ -26,14 +25,17 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
 	const [patients, setPatients] = useState(1);
 
 	const treatments = [
-		'Dental Care',
-		'Cosmetic Surgery',
-		'Heart Surgery',
-		'Orthopedics',
-		'Eye Surgery',
-		'Fertility Treatment',
-		'Cancer Treatment',
-		'Bariatric Surgery',
+		'Urology Treatments',
+		'Gynecology & Obstetrics',
+		'Gastroenterology',
+		'Vascular Surgery',
+		'Plastic & Aesthetic Medicine',
+		'General Surgery',
+		'Eye Surgery & Ophthalmology',
+		'Family Medicine & General Practice',
+		'Travel Medicine',
+		'Clinical Psychology',
+		'Diagnostic Services & Clinical Tests',
 	];
 
 	const popularDestinations = [

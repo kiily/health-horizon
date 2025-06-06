@@ -25,12 +25,26 @@ export function Footer() {
 	];
 
 	const treatments = [
-		{ href: '/treatments?category=dental', label: 'Dental Care' },
-		{ href: '/treatments?category=cosmetic', label: 'Cosmetic Surgery' },
-		{ href: '/treatments?category=cardiac', label: 'Heart Surgery' },
-		{ href: '/treatments?category=orthopedic', label: 'Orthopedics' },
-		{ href: '/treatments?category=eye', label: 'Eye Surgery' },
-		{ href: '/treatments?category=fertility', label: 'Fertility' },
+		{ href: '/treatments?category=urology', label: 'Urology Treatments' },
+		{
+			href: '/treatments?category=gynecology',
+			label: 'Gynecology & Obstetrics',
+		},
+		{
+			href: '/treatments?category=gastroenterology',
+			label: 'Gastroenterology',
+		},
+		{ href: '/treatments?category=vascular', label: 'Vascular Surgery' },
+		{
+			href: '/treatments?category=aesthetic',
+			label: 'Plastic & Aesthetic Medicine',
+		},
+		{ href: '/treatments?category=general-surgery', label: 'General Surgery' },
+		{
+			href: '/treatments?category=ophthalmology',
+			label: 'Eye Surgery & Ophthalmology',
+		},
+		{ href: '/treatments?category=general-practice', label: 'Family Medicine' },
 	];
 
 	const destinations = [
