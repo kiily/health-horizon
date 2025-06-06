@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Star, Clock } from 'lucide-react';
+import { Star, Clock, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/shared/Header';
 import { PageHeader } from '@/components/sections/PageHeader';
@@ -28,6 +28,14 @@ export default function TreatmentsPage() {
 			duration: '1-3 days',
 			popularity: 4.8,
 			category: 'Urology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: ['Vasectomy', 'Circumcision', 'Hydrocele Surgery'],
+				},
+			],
 		},
 		// GYNECOLOGY & OBSTETRICS
 		{
@@ -49,6 +57,18 @@ export default function TreatmentsPage() {
 			duration: '1-2 days',
 			popularity: 4.9,
 			category: 'Gynecology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Tubal Ligation',
+						'Hysteroscopy',
+						'Obstetric Ultrasound',
+					],
+				},
+			],
 		},
 		// GASTROENTEROLOGY
 		{
@@ -69,6 +89,14 @@ export default function TreatmentsPage() {
 			duration: '2-7 days',
 			popularity: 4.7,
 			category: 'Gastroenterology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: ['Gastric Balloon', 'Endoscopy', 'Colonoscopy'],
+				},
+			],
 		},
 		// VASCULAR SURGERY
 		{
@@ -87,6 +115,14 @@ export default function TreatmentsPage() {
 			duration: '1-3 days',
 			popularity: 4.6,
 			category: 'Vascular Surgery',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: ['Isolated Ligation', 'Ligation & Excision'],
+				},
+			],
 		},
 		// PLASTIC & AESTHETIC MEDICINE
 		{
@@ -110,6 +146,29 @@ export default function TreatmentsPage() {
 			duration: '1-5 days',
 			popularity: 4.8,
 			category: 'Aesthetic Medicine',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Liposuction',
+						'Botox Injections',
+						'Hyaluronic Acid Fillers',
+						'PDO Thread Lift',
+					],
+				},
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Botox Injections',
+						'Chemical Peels',
+						'Regenerative Medicine',
+					],
+				},
+			],
 		},
 		// GENERAL SURGERY
 		{
@@ -131,6 +190,18 @@ export default function TreatmentsPage() {
 			duration: '1-4 days',
 			popularity: 4.7,
 			category: 'General Surgery',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Hernia Repair',
+						'Hemorrhoidectomy',
+						'Benign Tumor Removal',
+					],
+				},
+			],
 		},
 		// OPHTHALMOLOGY
 		{
@@ -148,6 +219,18 @@ export default function TreatmentsPage() {
 			duration: '1-2 days',
 			popularity: 4.9,
 			category: 'Ophthalmology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Cataract Surgery',
+						'Strabismus Surgery',
+						'Optometry Examinations',
+					],
+				},
+			],
 		},
 		// FAMILY MEDICINE & GENERAL PRACTICE
 		{
@@ -166,6 +249,18 @@ export default function TreatmentsPage() {
 			duration: '1 day',
 			popularity: 4.5,
 			category: 'General Practice',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'General Practice Consultations',
+						'Family Medicine Consultations',
+						'Health Checkups',
+					],
+				},
+			],
 		},
 		// TRAVEL MEDICINE
 		{
@@ -184,6 +279,17 @@ export default function TreatmentsPage() {
 			duration: '1 day',
 			popularity: 4.4,
 			category: 'Travel Medicine',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Travel Medicine Consultations',
+						'Pre-travel Health Assessments',
+					],
+				},
+			],
 		},
 		// CLINICAL PSYCHOLOGY
 		{
@@ -202,6 +308,18 @@ export default function TreatmentsPage() {
 			duration: '1 day',
 			popularity: 4.6,
 			category: 'Psychology',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Clinical Psychology Consultations',
+						'Mental Health Assessments',
+						'Therapy Sessions',
+					],
+				},
+			],
 		},
 		// DIAGNOSTIC SERVICES
 		{
@@ -222,6 +340,18 @@ export default function TreatmentsPage() {
 			duration: '1 day',
 			popularity: 4.3,
 			category: 'Diagnostics',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Blood Tests',
+						'Ultrasound',
+						'Clinical Laboratory Tests',
+					],
+				},
+			],
 		},
 	];
 
@@ -231,7 +361,7 @@ export default function TreatmentsPage() {
 
 			<PageHeader
 				title="Medical Treatments"
-				subtitle="Comprehensive medical procedures and healthcare services at Aeger Prima Clinic, Lisbon"
+				subtitle="Comprehensive medical procedures at our Lisbon clinics"
 			/>
 
 			{/* Treatments Grid */}
@@ -263,6 +393,25 @@ export default function TreatmentsPage() {
 								<p className="text-gray-600 text-sm mb-3 leading-relaxed">
 									{treatment.description}
 								</p>
+
+								{/* Available Clinics */}
+								<div className="mb-3">
+									<h4 className="text-xs font-semibold text-gray-700 mb-2">
+										Available at:
+									</h4>
+									{treatment.clinics.map((clinic, index) => (
+										<div
+											key={index}
+											className="flex items-center text-xs text-gray-600 mb-1"
+										>
+											<MapPin className="h-3 w-3 mr-1 text-blue-500" />
+											<span className="font-medium">{clinic.name}</span>
+											<span className="text-gray-400 ml-1">
+												({clinic.address})
+											</span>
+										</div>
+									))}
+								</div>
 
 								<div className="flex flex-wrap gap-1 mb-3">
 									{treatment.procedures.slice(0, 2).map((procedure, index) => (

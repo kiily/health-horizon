@@ -21,7 +21,7 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
 	const [checkInDate, setCheckInDate] = useState<Date>();
 	const [checkOutDate, setCheckOutDate] = useState<Date>();
 	const [selectedTreatment, setSelectedTreatment] = useState('');
-	const [destination, setDestination] = useState('');
+	const [selectedClinic, setSelectedClinic] = useState('');
 	const [patients, setPatients] = useState(1);
 
 	const treatments = [
@@ -38,20 +38,16 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
 		'Diagnostic Services & Clinical Tests',
 	];
 
-	const popularDestinations = [
-		'Bangkok, Thailand',
-		'Seoul, South Korea',
-		'Mumbai, India',
-		'Istanbul, Turkey',
-		'Mexico City, Mexico',
-		'Dubai, UAE',
+	const clinics = [
+		'Aeger Prima Medical Center - Príncipe Real',
+		'Lisboa Health & Wellness Clinic - Avenidas Novas',
 	];
 
 	const handleSearch = () => {
 		// Handle search functionality
 		console.log({
 			treatment: selectedTreatment,
-			destination,
+			clinic: selectedClinic,
 			checkIn: checkInDate,
 			checkOut: checkOutDate,
 			patients,
@@ -111,31 +107,30 @@ export function HeroSection({ title, subtitle }: HeroSectionProps) {
 							</select>
 						</div>
 
-						{/* Destination */}
+						{/* Clinic Selection */}
 						<div className="space-y-2">
 							<label
-								htmlFor="destination-input"
+								htmlFor="clinic-select"
 								className="text-sm font-semibold text-gray-700 block text-left"
 							>
-								Destination
+								Clinic Location
 							</label>
 							<div className="relative">
 								<MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-								<input
-									id="destination-input"
-									type="text"
-									value={destination}
-									onChange={(e) => setDestination(e.target.value)}
-									placeholder="Where would you like to go?"
-									list="destinations"
-									className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base"
-									aria-label="Destination city or country"
-								/>
-								<datalist id="destinations">
-									{popularDestinations.map((dest) => (
-										<option key={dest} value={dest} />
+								<select
+									id="clinic-select"
+									value={selectedClinic}
+									onChange={(e) => setSelectedClinic(e.target.value)}
+									className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base bg-white"
+									aria-label="Select clinic location"
+								>
+									<option value="">Choose clinic</option>
+									{clinics.map((clinic) => (
+										<option key={clinic} value={clinic}>
+											{clinic}
+										</option>
 									))}
-								</datalist>
+								</select>
 							</div>
 						</div>
 

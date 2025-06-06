@@ -36,7 +36,7 @@ export function Header({ activePage }: HeaderProps) {
 
 	const navigationLinks = [
 		{ href: '/treatments', label: 'Treatments' },
-		{ href: '/destinations', label: 'Destinations' },
+		{ href: '/destinations', label: 'Clinics' },
 		{ href: '/about', label: 'About' },
 		{ href: '/contact', label: 'Contact' },
 	];

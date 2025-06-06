@@ -19,7 +19,7 @@ export function Footer() {
 
 	const quickLinks = [
 		{ href: '/treatments', label: 'All Treatments' },
-		{ href: '/destinations', label: 'Destinations' },
+		{ href: '/destinations', label: 'Our Clinics' },
 		{ href: '/about', label: 'About Us' },
 		{ href: '/contact', label: 'Contact' },
 	];
@@ -47,13 +47,17 @@ export function Footer() {
 		{ href: '/treatments?category=general-practice', label: 'Family Medicine' },
 	];
 
-	const destinations = [
-		{ href: '/destinations?country=thailand', label: 'Thailand' },
-		{ href: '/destinations?country=india', label: 'India' },
-		{ href: '/destinations?country=turkey', label: 'Turkey' },
-		{ href: '/destinations?country=south-korea', label: 'South Korea' },
-		{ href: '/destinations?country=mexico', label: 'Mexico' },
-		{ href: '/destinations?country=uae', label: 'UAE' },
+	const clinics = [
+		{
+			href: '/destinations?clinic=aeger-prima',
+			label: 'Aeger Prima Medical Center',
+		},
+		{
+			href: '/destinations?clinic=lisboa-health',
+			label: 'Lisboa Health & Wellness',
+		},
+		{ href: '/destinations', label: 'All Clinics' },
+		{ href: '/contact', label: 'Schedule Appointment' },
 	];
 
 	const supportLinks = [
@@ -185,15 +189,15 @@ export function Footer() {
 
 					{/* Destinations & Support */}
 					<div>
-						<h3 className="text-lg font-semibold mb-6">Top Destinations</h3>
+						<h3 className="text-lg font-semibold mb-6">Our Clinics</h3>
 						<ul className="space-y-3 mb-8">
-							{destinations.slice(0, 4).map((destination) => (
-								<li key={destination.href}>
+							{clinics.slice(0, 4).map((clinic) => (
+								<li key={clinic.href}>
 									<Link
-										href={destination.href}
+										href={clinic.href}
 										className="text-gray-300 hover:text-white transition-colors block"
 									>
-										{destination.label}
+										{clinic.label}
 									</Link>
 								</li>
 							))}
