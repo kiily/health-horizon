@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
 
 interface ClinicCardProps {
 	id: number;
@@ -27,11 +28,13 @@ export function ClinicCard({
 			className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
 			onClick={onClick}
 		>
-			<div className="relative">
-				<img
+			<div className="relative h-48">
+				<Image
 					src={image}
 					alt={`${name} medical facility`}
-					className="w-full h-48 object-cover"
+					fill
+					className="object-cover"
+					sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
 				/>
 				<div className="absolute top-3 right-3 bg-white rounded-full px-2 py-1 text-sm font-medium flex items-center shadow-sm">
 					<Star className="h-3 w-3 text-yellow-400 fill-current mr-1" />
