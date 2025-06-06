@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* React Day Picker Styles */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: hsl(210 40% 98%);
+  --rdp-background-color: hsl(222.2 47.4% 11.2%);
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.75);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
