@@ -10,7 +10,7 @@ const nextConfig = {
         optimizePackageImports: ['lucide-react', '@radix-ui/react-icons'],
     },
     images: {
-        domains: [],
+        domains: ['images.unsplash.com'],
     },
 }
 

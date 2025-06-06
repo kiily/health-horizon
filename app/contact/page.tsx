@@ -100,12 +100,17 @@ export default function ContactPage() {
 									aria-label="Select treatment interest"
 								>
 									<option>Select a treatment</option>
-									<option>Dental Care</option>
-									<option>Cosmetic Surgery</option>
-									<option>Heart Surgery</option>
-									<option>Orthopedics</option>
-									<option>Eye Surgery</option>
-									<option>Fertility Treatment</option>
+									<option>Urology Treatments</option>
+									<option>Gynecology & Obstetrics</option>
+									<option>Gastroenterology</option>
+									<option>Vascular Surgery</option>
+									<option>Plastic & Aesthetic Medicine</option>
+									<option>General Surgery</option>
+									<option>Eye Surgery & Ophthalmology</option>
+									<option>Family Medicine & General Practice</option>
+									<option>Travel Medicine</option>
+									<option>Clinical Psychology</option>
+									<option>Diagnostic Services & Clinical Tests</option>
 								</select>
 							</div>
 							<div>

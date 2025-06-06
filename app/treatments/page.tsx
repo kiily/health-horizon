@@ -1,102 +1,357 @@
 'use client';
 
 import React from 'react';
-import { Star, Clock } from 'lucide-react';
+import { Star, Clock, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Header } from '@/components/shared/Header';
 import { PageHeader } from '@/components/sections/PageHeader';
 
 export default function TreatmentsPage() {
 	const treatments = [
+		// UROLOGY
 		{
 			id: 1,
-			name: 'Dental Care',
+			name: 'Urology Treatments',
 			description:
-				'Complete dental solutions from routine checkups to advanced procedures',
+				'Comprehensive urological procedures and consultations for male reproductive and urinary system health',
 			image:
-				'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=300&fit=crop',
-			procedures: ['Dental Implants', 'Veneers', 'Orthodontics', 'Root Canal'],
-			averagePrice: '$1,200 - $3,500',
-			duration: '3-7 days',
+				'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop',
+			procedures: [
+				'Circumcision',
+				'Vasectomy',
+				'Hydrocele Surgery',
+				'Genital Warts Treatment',
+				'Urinary Incontinence Treatment',
+				'Urological Consultations',
+			],
+			averagePrice: '$800 - $3,500',
+			duration: '1-3 days',
 			popularity: 4.8,
+			category: 'Urology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: ['Vasectomy', 'Circumcision', 'Hydrocele Surgery'],
+				},
+			],
 		},
+		// GYNECOLOGY & OBSTETRICS
 		{
 			id: 2,
-			name: 'Cosmetic Surgery',
+			name: 'Gynecology & Obstetrics',
 			description:
-				'Aesthetic procedures to enhance your appearance and confidence',
+				"Complete women's health services including consultations, surgeries, and diagnostic examinations",
 			image:
 				'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&h=300&fit=crop',
 			procedures: [
-				'Rhinoplasty',
-				'Breast Augmentation',
-				'Liposuction',
-				'Facelift',
+				'Routine Gynecological Consultations',
+				'Tubal Ligation',
+				'Hysteroscopy',
+				'Obstetric Ultrasound',
+				'Gynecological Ultrasound',
+				'Pregnancy Follow-up',
 			],
-			averagePrice: '$2,500 - $8,000',
-			duration: '5-14 days',
-			popularity: 4.6,
+			averagePrice: '$200 - $2,500',
+			duration: '1-2 days',
+			popularity: 4.9,
+			category: 'Gynecology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Tubal Ligation',
+						'Hysteroscopy',
+						'Obstetric Ultrasound',
+					],
+				},
+			],
 		},
+		// GASTROENTEROLOGY
 		{
 			id: 3,
-			name: 'Heart Surgery',
+			name: 'Gastroenterology',
 			description:
-				'Advanced cardiac procedures with world-renowned specialists',
+				'Advanced digestive system treatments and weight management procedures',
 			image:
 				'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
 			procedures: [
-				'Bypass Surgery',
-				'Valve Replacement',
-				'Angioplasty',
-				'Pacemaker',
+				'Gastric Balloon',
+				'Bariatric Surgery',
+				'Endoscopy',
+				'Colonoscopy',
+				'Gastroenterology Consultations',
 			],
-			averagePrice: '$15,000 - $35,000',
-			duration: '14-21 days',
-			popularity: 4.9,
+			averagePrice: '$1,500 - $12,000',
+			duration: '2-7 days',
+			popularity: 4.7,
+			category: 'Gastroenterology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: ['Gastric Balloon', 'Endoscopy', 'Colonoscopy'],
+				},
+			],
 		},
+		// VASCULAR SURGERY
 		{
 			id: 4,
-			name: 'Orthopedics',
-			description: 'Joint replacements and bone surgeries for better mobility',
+			name: 'Vascular Surgery',
+			description:
+				'Specialized procedures for blood vessel and circulation system disorders',
 			image:
 				'https://images.unsplash.com/photo-1559757199-62d3d6e4c7a8?w=400&h=300&fit=crop',
 			procedures: [
-				'Hip Replacement',
-				'Knee Surgery',
-				'Spine Surgery',
-				'Sports Medicine',
+				'Isolated Ligation',
+				'Ligation & Excision',
+				'Vascular Surgery Consultations',
 			],
-			averagePrice: '$8,000 - $20,000',
-			duration: '7-14 days',
-			popularity: 4.7,
+			averagePrice: '$1,200 - $4,000',
+			duration: '1-3 days',
+			popularity: 4.6,
+			category: 'Vascular Surgery',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: ['Isolated Ligation', 'Ligation & Excision'],
+				},
+			],
 		},
+		// PLASTIC & AESTHETIC MEDICINE
 		{
 			id: 5,
-			name: 'Eye Surgery',
+			name: 'Plastic & Aesthetic Medicine',
 			description:
-				'Vision correction and eye procedures with cutting-edge technology',
+				'Cosmetic surgeries and non-invasive aesthetic treatments for enhanced appearance',
+			image:
+				'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=300&fit=crop',
+			procedures: [
+				'Liposuction',
+				'Botox Injections',
+				'Hyaluronic Acid Fillers',
+				'Bioplasty',
+				'PDO Thread Lift',
+				'Chemical Peels',
+				'Skinboosters',
+				'Regenerative Medicine',
+			],
+			averagePrice: '$300 - $8,000',
+			duration: '1-5 days',
+			popularity: 4.8,
+			category: 'Aesthetic Medicine',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Liposuction',
+						'Botox Injections',
+						'Hyaluronic Acid Fillers',
+						'PDO Thread Lift',
+					],
+				},
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Botox Injections',
+						'Chemical Peels',
+						'Regenerative Medicine',
+					],
+				},
+			],
+		},
+		// GENERAL SURGERY
+		{
+			id: 6,
+			name: 'General Surgery',
+			description:
+				'Wide range of surgical procedures for various conditions and hernia repairs',
 			image:
 				'https://images.unsplash.com/photo-1559757176-4d7e41d2c671?w=400&h=300&fit=crop',
 			procedures: [
-				'LASIK',
-				'Cataract Surgery',
-				'Retinal Surgery',
-				'Glaucoma Treatment',
+				'Hernia Repair',
+				'Hemorrhoidectomy',
+				'Benign Tumor Removal',
+				'Cyst Removal',
+				'Fistulectomy',
+				'Sphincteroctomy',
 			],
-			averagePrice: '$1,500 - $5,000',
-			duration: '2-5 days',
-			popularity: 4.8,
+			averagePrice: '$1,000 - $5,000',
+			duration: '1-4 days',
+			popularity: 4.7,
+			category: 'General Surgery',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Hernia Repair',
+						'Hemorrhoidectomy',
+						'Benign Tumor Removal',
+					],
+				},
+			],
 		},
+		// OPHTHALMOLOGY
 		{
-			id: 6,
-			name: 'Fertility Treatment',
-			description: 'Comprehensive reproductive health and fertility solutions',
+			id: 7,
+			name: 'Eye Surgery & Ophthalmology',
+			description: 'Vision correction and comprehensive eye care procedures',
+			image:
+				'https://images.unsplash.com/photo-1576089172869-4f5f6f315620?w=400&h=300&fit=crop',
+			procedures: [
+				'Cataract Surgery',
+				'Strabismus Surgery',
+				'Optometry Examinations',
+			],
+			averagePrice: '$800 - $3,000',
+			duration: '1-2 days',
+			popularity: 4.9,
+			category: 'Ophthalmology',
+			clinics: [
+				{
+					name: 'Aeger Prima Medical Center',
+					address: 'Príncipe Real',
+					available: true,
+					specialProcedures: [
+						'Cataract Surgery',
+						'Strabismus Surgery',
+						'Optometry Examinations',
+					],
+				},
+			],
+		},
+		// FAMILY MEDICINE & GENERAL PRACTICE
+		{
+			id: 8,
+			name: 'Family Medicine & General Practice',
+			description:
+				'Comprehensive healthcare services for routine medical needs and health maintenance',
+			image:
+				'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=300&fit=crop',
+			procedures: [
+				'General Practice Consultations',
+				'Family Medicine Consultations',
+				'Health Checkups',
+			],
+			averagePrice: '$100 - $300',
+			duration: '1 day',
+			popularity: 4.5,
+			category: 'General Practice',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'General Practice Consultations',
+						'Family Medicine Consultations',
+						'Health Checkups',
+					],
+				},
+			],
+		},
+		// TRAVEL MEDICINE
+		{
+			id: 9,
+			name: 'Travel Medicine',
+			description:
+				'Pre-travel health assessments and specialized medical consultations for travelers',
+			image:
+				'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
+			procedures: [
+				'Travel Medicine Consultations',
+				'Pre-travel Health Assessments',
+				'Vaccination Recommendations',
+			],
+			averagePrice: '$150 - $400',
+			duration: '1 day',
+			popularity: 4.4,
+			category: 'Travel Medicine',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Travel Medicine Consultations',
+						'Pre-travel Health Assessments',
+					],
+				},
+			],
+		},
+		// CLINICAL PSYCHOLOGY
+		{
+			id: 10,
+			name: 'Clinical Psychology',
+			description:
+				'Mental health services and psychological consultations for emotional well-being',
+			image:
+				'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
+			procedures: [
+				'Clinical Psychology Consultations',
+				'Mental Health Assessments',
+				'Therapy Sessions',
+			],
+			averagePrice: '$80 - $200',
+			duration: '1 day',
+			popularity: 4.6,
+			category: 'Psychology',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Clinical Psychology Consultations',
+						'Mental Health Assessments',
+						'Therapy Sessions',
+					],
+				},
+			],
+		},
+		// DIAGNOSTIC SERVICES
+		{
+			id: 11,
+			name: 'Diagnostic Services & Clinical Tests',
+			description:
+				'Comprehensive diagnostic procedures and laboratory testing services',
 			image:
 				'https://images.unsplash.com/photo-1559757212-6cc0d7b4c2a7?w=400&h=300&fit=crop',
-			procedures: ['IVF', 'IUI', 'Egg Freezing', 'Fertility Testing'],
-			averagePrice: '$3,000 - $12,000',
-			duration: '10-30 days',
-			popularity: 4.5,
+			procedures: [
+				'Blood Tests',
+				'Biopsy Procedures',
+				'Ultrasound',
+				'Clinical Laboratory Tests',
+				'Pathology Services',
+			],
+			averagePrice: '$50 - $800',
+			duration: '1 day',
+			popularity: 4.3,
+			category: 'Diagnostics',
+			clinics: [
+				{
+					name: 'Lisboa Health & Wellness Clinic',
+					address: 'Avenidas Novas',
+					available: true,
+					specialProcedures: [
+						'Blood Tests',
+						'Ultrasound',
+						'Clinical Laboratory Tests',
+					],
+				},
+			],
 		},
 	];
 
@@ -106,7 +361,7 @@ export default function TreatmentsPage() {
 
 			<PageHeader
 				title="Medical Treatments"
-				subtitle="World-class medical treatments at affordable prices"
+				subtitle="Comprehensive medical procedures at our Lisbon clinics"
 			/>
 
 			{/* Treatments Grid */}
@@ -127,6 +382,9 @@ export default function TreatmentsPage() {
 									<Star className="h-3 w-3 text-yellow-400 fill-current mr-1" />
 									{treatment.popularity}
 								</div>
+								<div className="absolute top-3 left-3 bg-blue-600 text-white px-2 py-1 text-xs font-medium rounded">
+									{treatment.category}
+								</div>
 							</div>
 							<CardContent className="p-4">
 								<h3 className="font-semibold text-gray-900 mb-2 text-base sm:text-lg">
@@ -135,6 +393,25 @@ export default function TreatmentsPage() {
 								<p className="text-gray-600 text-sm mb-3 leading-relaxed">
 									{treatment.description}
 								</p>
+
+								{/* Available Clinics */}
+								<div className="mb-3">
+									<h4 className="text-xs font-semibold text-gray-700 mb-2">
+										Available at:
+									</h4>
+									{treatment.clinics.map((clinic, index) => (
+										<div
+											key={index}
+											className="flex items-center text-xs text-gray-600 mb-1"
+										>
+											<MapPin className="h-3 w-3 mr-1 text-blue-500" />
+											<span className="font-medium">{clinic.name}</span>
+											<span className="text-gray-400 ml-1">
+												({clinic.address})
+											</span>
+										</div>
+									))}
+								</div>
 
 								<div className="flex flex-wrap gap-1 mb-3">
 									{treatment.procedures.slice(0, 2).map((procedure, index) => (
